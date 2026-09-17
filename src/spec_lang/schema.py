@@ -1,4 +1,4 @@
-"""词汇校验：规格里出现未知字段，是造新词的信号，先回 spec.md 补词汇。"""
+"""词汇校验：规格里出现未知字段，是造新词的信号，先回 spec/index.md 补词汇。"""
 
 TOP = {"name", "facts", "baseline", "triggers"}
 FACT = {"subject", "amount", "owner", "time", "received", "delay_risk", "reason"}
@@ -18,4 +18,4 @@ def validate(spec):
 def _check(d, allowed, label):
     unknown = set(d) - allowed
     if unknown:
-        raise ValueError(f"{label}存在未知字段 {sorted(unknown)}——这是造新词的信号，先回 spec.md 补词汇")
+        raise ValueError(f"{label}存在未知字段 {sorted(unknown)}——这是造新词的信号，先回 spec/index.md 补词汇")
